@@ -4,7 +4,7 @@ import 'package:twitter_clone/features/auth/view/signup_view.dart';
 import 'package:twitter_clone/theme/pallete.dart';
 
 import '../../../common/common.dart';
-import '../../../utils/constants/constants.dart';
+import '../../../constants/constants.dart';
 import '../widgets/auth_filed.dart';
 
 class LoginView extends StatefulWidget {

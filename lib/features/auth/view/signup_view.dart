@@ -6,14 +6,14 @@ import '../../../common/common.dart';
 import '../../../utils/constants/constants.dart';
 import '../widgets/auth_filed.dart';
 
-class LoginView extends StatefulWidget {
-  LoginView({Key? key}) : super(key: key);
+class SignUpView extends StatefulWidget {
+  SignUpView({Key? key}) : super(key: key);
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _SignUpViewState extends State<SignUpView> {
   // Using final the app bar is not recreated
   final appBar = UIConstants.appBar();
   final emailController = TextEditingController();
@@ -32,7 +32,7 @@ class _LoginViewState extends State<LoginView> {
       appBar: appBar,
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(children: [
             AuthField(
               controller: emailController,
@@ -60,11 +60,11 @@ class _LoginViewState extends State<LoginView> {
             ),
             RichText(
                 text: TextSpan(
-                    text: "Don't have an account?",
+                    text: "Already have an account?",
                     style: const TextStyle(fontSize: 16),
                     children: [
                   TextSpan(
-                    text: ' Sign up',
+                    text: ' Login',
                     style: const TextStyle(color: Pallete.blueColor, fontSize: 16),
                     recognizer: TapGestureRecognizer()..onTap = () {},
                   ),

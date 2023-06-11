@@ -43,55 +43,60 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
     final isLoading = ref.watch(authControllerProvider);
     return Scaffold(
       appBar: appBar,
-      body: isLoading ? const Loader() : Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(children: [
-            AuthField(
-              controller: emailController,
-              hintText: 'Email',
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            AuthField(
-              controller: passwordController,
-              hintText: 'Password',
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: RoundedSmallButton(
-                label: 'Done',
-                onTap: onSignUp,
+      body: isLoading
+          ? const Loader()
+          : Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(children: [
+                  AuthField(
+                    controller: emailController,
+                    hintText: 'Email',
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  AuthField(
+                    controller: passwordController,
+                    hintText: 'Password',
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: RoundedSmallButton(
+                      label: 'Done',
+                      onTap: onSignUp,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  RichText(
+                      text: TextSpan(
+                          text: "Already have an account?",
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Pallete.whiteColor,
+                          ),
+                          children: [
+                        TextSpan(
+                          text: ' Login',
+                          style: const TextStyle(
+                              color: Pallete.blueColor, fontSize: 16),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                LoginView.route(),
+                              );
+                            },
+                        ),
+                      ]))
+                ]),
               ),
             ),
-            const SizedBox(
-              height: 40,
-            ),
-            RichText(
-                text: TextSpan(
-                    text: "Already have an account?",
-                    style: const TextStyle(fontSize: 16),
-                    children: [
-                  TextSpan(
-                    text: ' Login',
-                    style:
-                        const TextStyle(color: Pallete.blueColor, fontSize: 16),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        Navigator.push(
-                          context,
-                          LoginView.route(),
-                        );
-                      },
-                  ),
-                ]))
-          ]),
-        ),
-      ),
     );
   }
 }

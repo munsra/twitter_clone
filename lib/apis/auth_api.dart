@@ -37,7 +37,7 @@ class AuthAPI implements IAuthAPI {
     try {
       final user = await _account.get();
       return user;
-    } on AppwriteException catch (e) {
+    } on AppwriteException {
       return null;
     } catch (e) {
       return null;

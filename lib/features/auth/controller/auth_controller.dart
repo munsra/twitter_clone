@@ -22,7 +22,7 @@ final currentUserDetailsProvider = FutureProvider((ref) {
   final userDetails = ref.watch(userDetailsProvider(currendUserId));
   return userDetails.value;
 });
-
+// use Family
 final userDetailsProvider = FutureProvider.family((ref, String uid) {
   final authController = ref.watch(authControllerProvider.notifier);
   return authController.getUserData(uid);
@@ -61,7 +61,7 @@ class AuthController extends StateNotifier<bool> {
         following: [],
         profilePic: '',
         bannerPic: '',
-        uid: '',
+        uid: r.$id,
         bio: '',
         isTwitterBlue: false,
       );

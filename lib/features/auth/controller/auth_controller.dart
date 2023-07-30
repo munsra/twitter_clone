@@ -17,9 +17,10 @@ final authControllerProvider =
   );
 });
 
-final currentUserDetailsProvider = FutureProvider((ref) {
-  final currendUserId = ref.watch(currentUserAccountProvider).value!.$id;
-  final userDetails = ref.watch(userDetailsProvider(currendUserId));
+final currentUserDetailsProvider = FutureProvider((ref) async {
+  final authController = ref.watch(authControllerProvider.notifier);
+  final currentUserAccount = await authController.currentUserAccount();
+  final userDetails = ref.watch(userDetailsProvider(currentUserAccount!.$id));
   return userDetails.value;
 });
 // use Family
@@ -85,8 +86,9 @@ class AuthController extends StateNotifier<bool> {
     state = true;
     final res = await _authAPI.login(email: email, password: password);
     state = false;
-    res.fold((l) => showSnackBar(context, l.message), (r) {
-      Navigator.push(context, HomeView.route());
+    res.fold(
+            (l) => showSnackBar(context, l.message),
+            (r) { Navigator.push(context, HomeView.route());
     });
   }
 

@@ -74,9 +74,8 @@ class TweetController extends StateNotifier<bool> {
   }
 
   String _getLinkFromText(String text) {
-    // https://www.youtube.com/@RivaanRanawat
     String link = '';
-    List<String> wordsInSentence = text.split('');
+    List<String> wordsInSentence = text.split(' ');
     for (String word in wordsInSentence) {
       if (word.startsWith('https://') || word.startsWith('www.')) {
         link = word;
@@ -86,9 +85,8 @@ class TweetController extends StateNotifier<bool> {
   }
 
   List<String> _getHashtagsFromText(String text) {
-    // #Rivaan #Ranawat
     List<String> hashtags = [];
-    List<String> wordsInSentence = text.split('');
+    List<String> wordsInSentence = text.split(' ');
     for (String word in wordsInSentence) {
       if (word.startsWith('#')) {
         hashtags.add(word);

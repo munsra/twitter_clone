@@ -7,6 +7,7 @@ class AppwriteConstants {
   static const String usersCollection = "64837f2c09dbf4026032";
   static const String tweetsCollection = "64cfb7e1dfb7b719e459";
 */
+
   /* Localhost */
   static const String DATABASE_ID = "64cfb54e338cb1c7c906";
   static const String PROJECT_ID = "64cfb1f670d6b45a490b";

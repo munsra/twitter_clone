@@ -75,14 +75,14 @@ class Tweet {
   factory Tweet.fromMap(Map<String, dynamic> map) {
     return Tweet(
       text: map['text'] as String,
-      hashtags: List<String>.from(map['hashtags'] as List<String>),
+      hashtags: List<String>.from(map['hashtags']),
       link: map['link'] as String,
-      imageLinks: List<String>.from(map['imageLinks'] as List<String>),
+      imageLinks: List<String>.from(map['imageLinks']),
       uid: map['uid'] as String,
       tweetType: (map['tweetType'] as String).toTweetTypeEnum(),
       tweetedAt: DateTime.fromMillisecondsSinceEpoch(map['tweetedAt'] as int),
-      likes: List<String>.from(map['likes'] as List<String>),
-      commentIds: List<String>.from(map['commentIds'] as List<String>),
+      likes: List<String>.from(map['likes']),
+      commentIds: List<String>.from(map['commentIds']),
       id: map['\$id'] as String,
       reshareCount: map['reshareCount'] as int,
     );

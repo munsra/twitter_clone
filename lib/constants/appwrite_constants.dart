@@ -6,6 +6,8 @@ class AppwriteConstants {
   static const String APPWRITE_URL = "https://cloud.appwrite.io/v1";
   static const String usersCollection = "64837f2c09dbf4026032";
   static const String tweetsCollection = "64cfb7e1dfb7b719e459";
+  // Storage
+  static const String imagesBucket = "64d63ae4182738a4e478";
 */
 
   /* Localhost */
@@ -15,4 +17,8 @@ class AppwriteConstants {
   static const String APPWRITE_URL = "http://192.168.1.200:80/v1";
   static const String usersCollection = "64cfb64f795e17e296cc";
   static const String tweetsCollection = "64cfb76161299ee5048a";
+  // Storage
+  static const String imagesBucket = "64d63aa6e0fc22c6d0c5";
+  static String imageUrl(String imageId) =>
+      '$APPWRITE_URL/storage/buckets/$imagesBucket/files/$imageId/view?project=$PROJECT_ID&mode=admin';
 }

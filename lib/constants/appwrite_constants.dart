@@ -14,7 +14,7 @@ class AppwriteConstants {
   static const String DATABASE_ID = "64cfb54e338cb1c7c906";
   static const String PROJECT_ID = "64cfb1f670d6b45a490b";
   // Endpoint
-  static const String APPWRITE_URL = "http://192.168.1.200:80/v1";
+  static const String APPWRITE_URL = "http://192.168.1.227:80/v1";
   static const String usersCollection = "64cfb64f795e17e296cc";
   static const String tweetsCollection = "64cfb76161299ee5048a";
   // Storage

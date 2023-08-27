@@ -4,6 +4,7 @@ import 'package:twitter_clone/common/error_page.dart';
 import 'package:twitter_clone/features/tweet/controller/tweet_controller.dart';
 
 import '../../../common/loading_page.dart';
+import 'tweet_card.dart';
 
 class TweetList extends ConsumerWidget {
   const TweetList({super.key});
@@ -16,7 +17,7 @@ class TweetList extends ConsumerWidget {
             itemCount: tweets.length,
             itemBuilder: (BuildContext context, int index) {
               final tweet = tweets[index];
-              return Text(tweet.text);
+              return TweetCard(tweet: tweet);
             },
           );
         },

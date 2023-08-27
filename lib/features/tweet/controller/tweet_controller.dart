@@ -74,7 +74,7 @@ class TweetController extends StateNotifier<bool> {
       link: link,
       imageLinks: imageLinks,
       uid: user.uid,
-      tweetType: TweetType.text,
+      tweetType: TweetType.image,
       tweetedAt: DateTime.now(),
       likes: const [],
       commentIds: const [],

@@ -36,6 +36,7 @@ class HashtagText extends StatelessWidget {
             text: '$element ',
             style: const TextStyle(
               fontSize: 18,
+              color: Colors.white,
             ),
           ),
         );

@@ -32,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar,
+      appBar: _page == 0 ? appBar : null,
       body: IndexedStack(
         index: _page,
         children: UIConstants.bottomTabBarPages,
@@ -62,8 +62,9 @@ class _HomeViewState extends State<HomeView> {
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              _page == 2 ?
-              AssetsConstants.notifFilledIcon : AssetsConstants.notifOutlinedIcon,
+              _page == 2
+                  ? AssetsConstants.notifFilledIcon
+                  : AssetsConstants.notifOutlinedIcon,
               colorFilter:
                   const ColorFilter.mode(Pallete.whiteColor, BlendMode.srcIn),
             ),

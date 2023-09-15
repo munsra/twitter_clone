@@ -1,5 +1,5 @@
 class AppwriteConstants {
-  /* Cloud Database   */
+  /* Cloud Database  
   static const String DATABASE_ID = "646c72cee0a926b9dc56";
   static const String PROJECT_ID = "646c6fe19f5933472238";
   // Endpoint
@@ -10,8 +10,8 @@ class AppwriteConstants {
   static const String imagesBucket = "64d63ae4182738a4e478";
   static String imageUrl(String imageId) =>
       '$APPWRITE_URL/storage/buckets/$imagesBucket/files/$imageId/view?project=$PROJECT_ID&mode=admin';
-
-  /* Localhost 
+ */
+  /* Localhost   */
   static const String DATABASE_ID = "64cfb54e338cb1c7c906";
   static const String PROJECT_ID = "64cfb1f670d6b45a490b";
   // Endpoint
@@ -22,5 +22,4 @@ class AppwriteConstants {
   static const String imagesBucket = "64d63aa6e0fc22c6d0c5";
   static String imageUrl(String imageId) =>
       '$APPWRITE_URL/storage/buckets/$imagesBucket/files/$imageId/view?project=$PROJECT_ID&mode=admin';
-      */
 }
